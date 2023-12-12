@@ -6,3 +6,13 @@ radianceQuantifier.egg-info
 .DS_Store
 radianceQuantifier/__pycache__
 radianceQuantifier/misc
+radianceQuantifier/dataprocessing/.ipynb_checkpoints/inVivoRadianceImagePlotting-checkpoint.py
+radianceQuantifier/dataprocessing/.ipynb_checkpoints/inVivoRadianceProcessing-checkpoint.py
+radianceQuantifier/plotting/.ipynb_checkpoints/__init__-checkpoint.py
+radianceQuantifier/plotting/.ipynb_checkpoints/facetPlot3D-checkpoint.py
+radianceQuantifier/plotting/.ipynb_checkpoints/facetPlotLibrary-checkpoint.py
+radianceQuantifier/plotting/.ipynb_checkpoints/plottingGUI-checkpoint.py
+radianceQuantifier/plotting/.ipynb_checkpoints/testing-checkpoint.ipynb
+radianceQuantifier/plotting/sampleNameFile_test.xlsx
+radianceQuantifier/plotting/testing.ipynb
+radianceQuantifier/setup/.ipynb_checkpoints/processExperimentGUI-checkpoint.py
