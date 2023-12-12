@@ -308,7 +308,7 @@ def horizontallySeparateMice(brightfieldSamples,visualize=False):
     brightfieldDf = brightfieldDf.sum(axis=1).to_frame('Count')
     brightfieldDf.loc[:,:] = MinMaxScaler().fit_transform(brightfieldDf.values)
 
-    maxPointRangeCutoff = 0.2
+    maxPointRangeCutoff = 0.4
     rangeBreakpoints = []
     for row in range(brightfieldDf.shape[0]-1,-1,-1):
         if brightfieldDf.iloc[row,0] > maxPointRangeCutoff:
@@ -658,7 +658,7 @@ def addTrueIndexToDataframe(radianceStatisticDf,sampleNameFile):
     for row in range(sampleNameFile.shape[0]):
         sampleName = list(sampleNameFile['Group'])[row]
         time = list(sampleNameFile['Day'])[row]
-        sampleStatistics = radianceStatisticDf.xs([sampleName,time],level=['Group','Day'])
+        sampleStatistics = radianceStatisticDf.xs((sampleName,time),level=('Group','Day'))
         matrixList.append(sampleStatistics.values)
         for sample in sampleStatistics.index.unique('Sample'):
           tupleList.append(sampleNameFile.iloc[row,:].values.tolist()+[sample])
@@ -675,7 +675,7 @@ def addTrueIndexToPixelDataframe(radiancePixelDf,sampleNameFile):
     for row in range(sampleNameFile.shape[0]):
         sampleName = list(sampleNameFile['Group'])[row]
         time = list(sampleNameFile['Day'])[row]
-        sampleStatistics = radiancePixelDf.xs([sampleName,time],level=['Group','Day'])
+        sampleStatistics = radiancePixelDf.xs((sampleName,time),level=('Group','Day'))
         matrixList.append(sampleStatistics.values)
         for sample in sampleStatistics.index.unique('Sample'):
           sampleDf = sampleStatistics.query("Sample == @sample").reset_index()
